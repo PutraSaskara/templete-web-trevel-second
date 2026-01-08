@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { siteConfig } from '../data/site-config';
 import DynamicIcon from '../components/DynamicIcon';
@@ -7,6 +7,38 @@ import SEO from '../components/SEO';
 const BlogPost = () => {
     const { slug } = useParams();
     const post = siteConfig.posts.find(p => p.slug === slug);
+    const [showCopied, setShowCopied] = useState(false);
+
+    const handleShare = async () => {
+        const shareData = {
+            title: post?.title || 'Article',
+            text: post?.excerpt || '',
+            url: window.location.href
+        };
+
+        try {
+            // Try native share API first (mobile/modern browsers)
+            if (navigator.share) {
+                await navigator.share(shareData);
+            } else {
+                // Fallback: copy to clipboard
+                await navigator.clipboard.writeText(window.location.href);
+                setShowCopied(true);
+                setTimeout(() => setShowCopied(false), 2000);
+            }
+        } catch (err) {
+            // If share was cancelled or failed, try clipboard
+            if (err.name !== 'AbortError') {
+                try {
+                    await navigator.clipboard.writeText(window.location.href);
+                    setShowCopied(true);
+                    setTimeout(() => setShowCopied(false), 2000);
+                } catch {
+                    console.error('Failed to copy URL');
+                }
+            }
+        }
+    };
 
     if (!post) {
         return (
@@ -62,9 +94,14 @@ const BlogPost = () => {
                         <Link to="/blog" className="text-text-muted hover:text-white flex items-center gap-2 transition-colors">
                             <DynamicIcon name="ArrowLeft" size={16} /> Back to Journal
                         </Link>
-                        <div className="flex gap-4">
-                            <button className="text-text-muted hover:text-primary transition-colors">
-                                <DynamicIcon name="Share2" size={20} />
+                        <div className="flex gap-4 relative">
+                            <button
+                                onClick={handleShare}
+                                className="text-text-muted hover:text-primary transition-colors flex items-center gap-2"
+                                title="Share this article"
+                            >
+                                <DynamicIcon name={showCopied ? "Check" : "Share2"} size={20} />
+                                {showCopied && <span className="text-sm text-primary">Link copied!</span>}
                             </button>
                         </div>
                     </div>
