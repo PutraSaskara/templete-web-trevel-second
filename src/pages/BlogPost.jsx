@@ -38,12 +38,12 @@ const BlogPost = () => {
 
                 <div className="absolute inset-0 flex items-center justify-center">
                     <div className="max-w-4xl mx-auto px-4 text-center">
-                        <div className="inline-flex items-center gap-4 text-sm text-text-muted mb-6 uppercase tracking-widest justify-center">
+                        <div className="inline-flex items-center gap-4 text-sm text-text-muted mb-6 uppercase tracking-widest justify-center opacity-0-initial animate-fade-in-down">
                             <span>{post.date}</span>
                             <span className="w-1 h-1 bg-primary rounded-full"></span>
                             <span>{post.author}</span>
                         </div>
-                        <h1 className="text-3xl md:text-5xl font-serif font-bold text-white leading-tight mb-8">
+                        <h1 className="text-3xl md:text-5xl font-serif font-bold text-white leading-tight mb-8 opacity-0-initial animate-fade-in-up animation-delay-200">
                             {post.title}
                         </h1>
                     </div>
@@ -52,13 +52,13 @@ const BlogPost = () => {
 
             {/* Content */}
             <div className="max-w-3xl mx-auto px-4 -mt-10 relative z-10">
-                <div className="bg-card-bg p-8 md:p-12 rounded border border-white/10 shadow-xl">
+                <div className="bg-card-bg p-8 md:p-12 rounded border border-white/10 shadow-xl opacity-0-initial animate-scale-in animation-delay-400">
                     <div
                         className="prose prose-invert prose-lg max-w-none prose-headings:font-serif prose-headings:text-white prose-p:text-text-muted prose-li:text-text-muted prose-strong:text-white prose-a:text-primary hover:prose-a:text-white transition-colors"
                         dangerouslySetInnerHTML={{ __html: post.content }}
                     />
 
-                    <div className="mt-12 pt-8 border-t border-white/10 flex justify-between items-center">
+                    <div className="mt-12 pt-8 border-t border-white/10 flex justify-between items-center opacity-0-initial animate-fade-in-up animation-delay-600">
                         <Link to="/blog" className="text-text-muted hover:text-white flex items-center gap-2 transition-colors">
                             <DynamicIcon name="ArrowLeft" size={16} /> Back to Journal
                         </Link>

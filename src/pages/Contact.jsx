@@ -30,49 +30,43 @@ const Contact = () => {
         window.open(waUrl, '_blank');
     };
 
+    const contactItems = [
+        { icon: 'Phone', label: 'Phone', value: globalContact.phone },
+        { icon: 'Mail', label: 'Email', value: globalContact.email },
+        { icon: 'MapPin', label: 'Office', value: globalContact.address }
+    ];
+
     return (
         <div className="max-w-7xl mx-auto px-4 py-24 grid grid-cols-1 lg:grid-cols-2 gap-16">
             <SEO title="Contact Us" description="Get in touch with Saskara Luxury Travels to plan your next dream vacation." />
-            <div>
+            <div className="opacity-0-initial animate-fade-in-left">
                 <h1 className="text-4xl md:text-5xl font-serif font-bold text-white mb-6">{pageContact.title}</h1>
                 <p className="text-text-muted text-lg mb-12">
                     Ready to start your journey? Contact us today and let us help you plan the perfect trip.
                 </p>
 
                 <div className="space-y-8">
-                    <div className="flex items-start gap-4">
-                        <div className="bg-white/10 p-3 rounded-full text-primary">
-                            <DynamicIcon name="Phone" size={24} />
+                    {contactItems.map((item, idx) => (
+                        <div
+                            key={idx}
+                            className="flex items-start gap-4 opacity-0-initial animate-fade-in-up"
+                            style={{ animationDelay: `${300 + (idx * 150)}ms` }}
+                        >
+                            <div className="bg-white/10 p-3 rounded-full text-primary">
+                                <DynamicIcon name={item.icon} size={24} />
+                            </div>
+                            <div>
+                                <h3 className="text-white font-bold mb-1">{item.label}</h3>
+                                <p className="text-text-muted">{item.value}</p>
+                            </div>
                         </div>
-                        <div>
-                            <h3 className="text-white font-bold mb-1">Phone</h3>
-                            <p className="text-text-muted">{globalContact.phone}</p>
-                        </div>
-                    </div>
-                    <div className="flex items-start gap-4">
-                        <div className="bg-white/10 p-3 rounded-full text-primary">
-                            <DynamicIcon name="Mail" size={24} />
-                        </div>
-                        <div>
-                            <h3 className="text-white font-bold mb-1">Email</h3>
-                            <p className="text-text-muted">{globalContact.email}</p>
-                        </div>
-                    </div>
-                    <div className="flex items-start gap-4">
-                        <div className="bg-white/10 p-3 rounded-full text-primary">
-                            <DynamicIcon name="MapPin" size={24} />
-                        </div>
-                        <div>
-                            <h3 className="text-white font-bold mb-1">Office</h3>
-                            <p className="text-text-muted">{globalContact.address}</p>
-                        </div>
-                    </div>
+                    ))}
                 </div>
             </div>
 
-            <div className="bg-card-bg p-8 rounded border border-white/10">
+            <div className="bg-card-bg p-8 rounded border border-white/10 opacity-0-initial animate-fade-in-right animation-delay-200">
                 <form onSubmit={handleSubmit} className="space-y-6">
-                    <div>
+                    <div className="opacity-0-initial animate-fade-in-up animation-delay-300">
                         <label className="block text-sm font-medium text-text-muted mb-2">Your Name</label>
                         <input
                             type="text"
@@ -84,7 +78,7 @@ const Contact = () => {
                             placeholder="John Doe"
                         />
                     </div>
-                    <div>
+                    <div className="opacity-0-initial animate-fade-in-up animation-delay-400">
                         <label className="block text-sm font-medium text-text-muted mb-2">Email Address</label>
                         <input
                             type="email"
@@ -96,7 +90,7 @@ const Contact = () => {
                             placeholder="john@example.com"
                         />
                     </div>
-                    <div>
+                    <div className="opacity-0-initial animate-fade-in-up animation-delay-500">
                         <label className="block text-sm font-medium text-text-muted mb-2">Message</label>
                         <textarea
                             name="message"
@@ -108,7 +102,7 @@ const Contact = () => {
                             placeholder="Tell us about your dream trip..."
                         ></textarea>
                     </div>
-                    <button type="submit" className="w-full btn-primary flex justify-center items-center gap-2">
+                    <button type="submit" className="w-full btn-primary flex justify-center items-center gap-2 opacity-0-initial animate-fade-in-up animation-delay-600">
                         Send Message <DynamicIcon name="Send" size={18} />
                     </button>
                 </form>

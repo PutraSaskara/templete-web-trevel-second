@@ -8,14 +8,14 @@ const About = () => {
     return (
         <div className="max-w-4xl mx-auto px-4 py-24">
             <SEO title="About Us" description={content.substring(0, 150) + "..."} />
-            <h1 className="text-4xl md:text-5xl font-serif font-bold text-white mb-8 text-center">{title}</h1>
+            <h1 className="text-4xl md:text-5xl font-serif font-bold text-white mb-8 text-center opacity-0-initial animate-fade-in-up">{title}</h1>
             <div className="prose prose-invert prose-lg mx-auto text-text-muted">
-                <p>{content}</p>
-                <p>
+                <p className="opacity-0-initial animate-fade-in-up animation-delay-200">{content}</p>
+                <p className="opacity-0-initial animate-fade-in-up animation-delay-300">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                     Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                 </p>
-                <p>
+                <p className="opacity-0-initial animate-fade-in-up animation-delay-400">
                     Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
                     Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                 </p>

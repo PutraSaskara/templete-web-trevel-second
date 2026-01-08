@@ -13,16 +13,21 @@ const Blog = () => {
             <SEO title={title} description={subtitle} slug="blog" />
             {/* Header */}
             <div className="text-center mb-16">
-                <h1 className="text-4xl md:text-5xl font-serif font-bold text-white mb-4">{title}</h1>
-                <p className="text-lg text-text-muted max-w-2xl mx-auto">
+                <h1 className="text-4xl md:text-5xl font-serif font-bold text-white mb-4 opacity-0-initial animate-fade-in-up">{title}</h1>
+                <p className="text-lg text-text-muted max-w-2xl mx-auto opacity-0-initial animate-fade-in-up animation-delay-200">
                     {subtitle}
                 </p>
             </div>
 
             {/* Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {posts.map((post) => (
-                    <Link to={`/blog/${post.slug}`} key={post.id} className="group block h-full">
+                {posts.map((post, idx) => (
+                    <Link
+                        to={`/blog/${post.slug}`}
+                        key={post.id}
+                        className="group block h-full opacity-0-initial animate-fade-in-up"
+                        style={{ animationDelay: `${200 + (idx * 100)}ms` }}
+                    >
                         <div className="card h-full flex flex-col relative bg-card-bg rounded border border-white/10 overflow-hidden transition-all duration-300 hover:shadow-lg hover:border-primary">
                             {/* Image Container */}
                             <div className="relative aspect-[16/9] overflow-hidden">

@@ -25,13 +25,13 @@ const Home = () => {
                 </div>
 
                 <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
-                    <h1 className="text-5xl md:text-7xl font-serif font-bold text-white mb-6 leading-tight animate-fade-in-up">
+                    <h1 className="text-5xl md:text-7xl font-serif font-bold text-white mb-6 leading-tight opacity-0-initial animate-fade-in-up">
                         {home.hero.title}
                     </h1>
-                    <p className="text-lg md:text-xl text-text-muted mb-10 max-w-2xl mx-auto font-light">
+                    <p className="text-lg md:text-xl text-text-muted mb-10 max-w-2xl mx-auto font-light opacity-0-initial animate-fade-in-up animation-delay-200">
                         {home.hero.subtitle}
                     </p>
-                    <Link to="/tours" className="btn-primary inline-flex items-center gap-2 group">
+                    <Link to="/tours" className="btn-primary inline-flex items-center gap-2 group opacity-0-initial animate-fade-in-up animation-delay-400">
                         {home.hero.cta}
                         <DynamicIcon name="ArrowRight" size={20} className="group-hover:translate-x-1 transition-transform" />
                     </Link>
@@ -41,14 +41,18 @@ const Home = () => {
             {/* Features Section */}
             <section className="py-24 bg-background">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center mb-16">
+                    <div className="text-center mb-16 opacity-0-initial animate-fade-in-up">
                         <h2 className="text-3xl md:text-4xl font-serif font-bold text-white mb-4">{home.features.title}</h2>
                         <div className="h-1 w-20 bg-primary mx-auto"></div>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                         {home.features.items.map((feature, idx) => (
-                            <div key={idx} className="bg-card-bg p-8 rounded border border-white/5 hover:border-primary transition-colors group">
+                            <div
+                                key={idx}
+                                className={`bg-card-bg p-8 rounded border border-white/5 hover:border-primary transition-colors group opacity-0-initial animate-fade-in-up animation-delay-${(idx + 1) * 100}`}
+                                style={{ animationDelay: `${(idx + 1) * 100}ms` }}
+                            >
                                 <div className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-background transition-colors">
                                     <DynamicIcon name={feature.icon} size={24} />
                                 </div>
@@ -63,7 +67,7 @@ const Home = () => {
             {/* Featured Tours Section */}
             <section className="py-24 bg-card-bg relative">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="flex justify-between items-end mb-12">
+                    <div className="flex justify-between items-end mb-12 opacity-0-initial animate-fade-in-up">
                         <div>
                             <h2 className="text-3xl md:text-4xl font-serif font-bold text-white mb-2">Featured Journeys</h2>
                             <p className="text-text-muted">Handpicked experiences for the wanderlust in you.</p>
@@ -74,8 +78,14 @@ const Home = () => {
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        {featuredTours.map((tour) => (
-                            <TourCard key={tour.id} tour={tour} />
+                        {featuredTours.map((tour, idx) => (
+                            <div
+                                key={tour.id}
+                                className="opacity-0-initial animate-fade-in-up"
+                                style={{ animationDelay: `${(idx + 1) * 150}ms` }}
+                            >
+                                <TourCard tour={tour} />
+                            </div>
                         ))}
                     </div>
 
@@ -88,11 +98,15 @@ const Home = () => {
             {/* Testimonials Section */}
             <section className="py-24 bg-background">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <h2 className="text-3xl md:text-4xl font-serif font-bold text-white text-center mb-16">{home.testimonials.title}</h2>
+                    <h2 className="text-3xl md:text-4xl font-serif font-bold text-white text-center mb-16 opacity-0-initial animate-fade-in-up">{home.testimonials.title}</h2>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         {home.testimonials.items.map((item, idx) => (
-                            <div key={idx} className="bg-card-bg p-8 rounded border border-white/5 flex gap-6">
+                            <div
+                                key={idx}
+                                className="bg-card-bg p-8 rounded border border-white/5 flex gap-6 opacity-0-initial animate-fade-in-up hover:border-primary/50 transition-colors"
+                                style={{ animationDelay: `${(idx + 1) * 150}ms` }}
+                            >
                                 <img src={item.avatar} alt={item.name} className="w-16 h-16 rounded-full object-cover border-2 border-primary" />
                                 <div>
                                     <div className="flex gap-1 text-primary mb-2">

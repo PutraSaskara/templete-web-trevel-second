@@ -36,11 +36,11 @@ const TourDetail = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
                 <div className="absolute bottom-0 left-0 w-full p-8 md:p-16">
                     <div className="max-w-7xl mx-auto">
-                        <div className="inline-block bg-primary text-background px-3 py-1 rounded text-sm font-bold mb-4">
+                        <div className="inline-block bg-primary text-background px-3 py-1 rounded text-sm font-bold mb-4 opacity-0-initial animate-fade-in-up">
                             {tour.duration}
                         </div>
-                        <h1 className="text-4xl md:text-6xl font-serif font-bold text-white mb-4">{tour.title}</h1>
-                        <p className="text-xl md:text-2xl text-primary font-bold">{tour.price}</p>
+                        <h1 className="text-4xl md:text-6xl font-serif font-bold text-white mb-4 opacity-0-initial animate-fade-in-up animation-delay-100">{tour.title}</h1>
+                        <p className="text-xl md:text-2xl text-primary font-bold opacity-0-initial animate-fade-in-up animation-delay-200">{tour.price}</p>
                     </div>
                 </div>
             </div>
@@ -48,18 +48,22 @@ const TourDetail = () => {
             <div className="max-w-7xl mx-auto px-4 py-16 grid grid-cols-1 lg:grid-cols-3 gap-12">
                 {/* Main Content */}
                 <div className="col-span-1 lg:col-span-2 space-y-12">
-                    <div>
+                    <div className="opacity-0-initial animate-fade-in-up animation-delay-300">
                         <h2 className="text-2xl font-serif font-bold text-white mb-6">Overview</h2>
                         <p className="text-text-muted text-lg leading-relaxed">
                             {tour.description}
                         </p>
                     </div>
 
-                    <div>
+                    <div className="opacity-0-initial animate-fade-in-up animation-delay-400">
                         <h2 className="text-2xl font-serif font-bold text-white mb-6">Highlights</h2>
                         <ul className="space-y-4">
                             {tour.highlights.map((highlight, idx) => (
-                                <li key={idx} className="flex items-start gap-3 text-text-muted">
+                                <li
+                                    key={idx}
+                                    className="flex items-start gap-3 text-text-muted opacity-0-initial animate-fade-in-left"
+                                    style={{ animationDelay: `${500 + (idx * 100)}ms` }}
+                                >
                                     <DynamicIcon name="CheckCircle" className="text-primary mt-1 min-w-[20px]" size={20} />
                                     <span>{highlight}</span>
                                 </li>
@@ -70,7 +74,7 @@ const TourDetail = () => {
 
                 {/* Sidebar */}
                 <div className="col-span-1">
-                    <div className="bg-card-bg p-8 rounded border border-white/10 sticky top-24">
+                    <div className="bg-card-bg p-8 rounded border border-white/10 sticky top-24 opacity-0-initial animate-fade-in-right animation-delay-300">
                         <h3 className="text-xl font-bold text-white mb-6">Book This Tour</h3>
                         <p className="text-text-muted text-sm mb-6">
                             Interested in this trip? Contact us via WhatsApp to check availability and book your spot.
