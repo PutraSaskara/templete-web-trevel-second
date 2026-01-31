@@ -18,116 +18,116 @@ export const siteConfig = {
         }
     },
     global: {
-        siteName: "Saskara Luxury Travels",
+        siteName: "Elysian Odyssey",
         logo: "/logo.svg",
         favicon: "/vite.svg", // Default favicon
         metadata: {
-            title: "Saskara Luxury Travels",
-            titleTemplate: "%s | Saskara Luxury Travels",
-            description: "Experience luxury travel like never before. Curated journeys for the discerning traveler.",
-            siteUrl: "https://saskara.com",
+            title: "Elysian Odyssey | Luxury Travel Curators",
+            titleTemplate: "%s | Elysian Odyssey",
+            description: "Journey beyond ordinary. Curated luxury experiences for discerning travelers seeking transformative adventures.",
+            siteUrl: "https://elysianodyssey.com",
             openGraph: {
                 type: "website",
                 locale: "en_US",
-                url: "https://saskara.com",
-                site_name: "Saskara Luxury Travels",
+                url: "https://elysianodyssey.com",
+                site_name: "Elysian Odyssey",
             },
             twitter: {
-                handle: "@saskara",
-                site: "@saskara",
+                handle: "@elysianodyssey",
+                site: "@elysianodyssey",
                 cardType: "summary_large_image",
             },
         },
         social: {
-            facebook: "https://www.facebook.com",
-            instagram: "https://www.instagram.com",
-            twitter: "https://www.twitter.com",
+            facebook: "https://www.facebook.com/elysianodyssey",
+            instagram: "https://www.instagram.com/elysianodyssey",
+            twitter: "https://www.twitter.com/elysianodyssey",
         },
         contact: {
             phone: "+6281234567890",
-            email: "hello@saskara.com",
+            email: "journey@elysianodyssey.com",
             address: "Bali, Indonesia"
         },
         footer: {
-            description: "Crafting unforgettable journeys for the modern traveler. We bring you the world's most breathtaking destinations with premium service.",
-            copyright: "© 2026 Saskara Luxury Travels. All rights reserved.",
+            description: "Crafting transformative journeys beyond imagination. We orchestrate experiences that redefine luxury travel.",
+            copyright: "© 2026 Elysian Odyssey. All rights reserved.",
             links: [
-                { label: "Tours", href: "/tours" },
-                { label: "Journal", href: "/blog" },
-                { label: "About Us", href: "/about" },
-                { label: "Contact", href: "/contact" }
+                { label: "Voyages", href: "/tours" },
+                { label: "Chronicles", href: "/blog" },
+                { label: "Our Ethos", href: "/about" },
+                { label: "Concierge", href: "/contact" }
             ]
         }
     },
     pages: {
         home: {
             hero: {
-                title: "Discover the Extraordinary",
-                subtitle: "Experience luxury travel like never before. Curated journeys for the discerning traveler.",
-                cta: "Explore Tours",
-                image: "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=2070&auto=format&fit=crop" // Swiss Alps / Dark vibe
+                title: "Journey Beyond Ordinary",
+                subtitle: "Experience transformative luxury travel. Curated odysseys for the discerning soul.",
+                cta: "Explore Voyages",
+                image: "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=2070&auto=format&fit=crop"
             },
             features: {
-                title: "Why Choose Saskara?",
+                title: "The Elysian Promise",
                 items: [
-                    { title: "Exclusive Access", description: "Get access to private locations and events.", icon: "Key" },
-                    { title: "24/7 Concierge", description: "We are here for you, anytime, anywhere.", icon: "Headset" },
-                    { title: "Best Price Guarantee", description: "Luxury doesn't always have to break the bank.", icon: "Tag" },
-                    { title: "Expert Guides", description: "Local experts to guide you through your journey.", icon: "Compass" }
+                    { title: "Exclusive Access", description: "Unlock doors to hidden sanctuaries and private realms.", icon: "Key" },
+                    { title: "24/7 Concierge", description: "Dedicated journey curator available around the clock.", icon: "Headset" },
+                    { title: "Price Assurance", description: "Exceptional value for unparalleled experiences.", icon: "Tag" },
+                    { title: "Local Sages", description: "Native guides with deep cultural insights.", icon: "Compass" }
                 ]
             },
             testimonials: {
-                title: "What Our Guests Say",
+                title: "Voices from Our Voyagers",
                 items: [
-                    { name: "Sarah J.", role: "Travel Enthusiast", text: "The most amazing trip of my life! Every detail was perfect.", rating: 5, avatar: "https://randomuser.me/api/portraits/women/44.jpg" },
-                    { name: "Michael T.", role: "CEO", text: "Impeccable service and breathtaking destinations. Highly recommended.", rating: 5, avatar: "https://randomuser.me/api/portraits/men/32.jpg" }
+                    { name: "Sarah J.", role: "Travel Enthusiast", text: "A transformative experience that redefined how I see the world.", rating: 5, avatar: "https://randomuser.me/api/portraits/women/44.jpg" },
+                    { name: "Michael T.", role: "CEO", text: "Impeccable curation. Every moment was a masterpiece.", rating: 5, avatar: "https://randomuser.me/api/portraits/men/32.jpg" }
                 ]
             }
         },
         about: {
-            title: "About Us",
-            content: "We are a premier travel agency dedicated to providing unforgettable experiences. Our team of experts curates the best destinations and activities for you."
+            title: "Our Ethos",
+            content: "We are curators of extraordinary journeys, crafting experiences that transcend mere travel to become transformative odysseys."
         },
         contact: {
-            title: "Get in Touch",
-            whatsapp: "6285792942449", // Example number
-            messagePrefix: "Hello Saskara, I would like to inquire about..."
+            title: "Begin Your Odyssey",
+            whatsapp: "6285792942449",
+            messagePrefix: "Hello Elysian Odyssey, I'm interested in learning more about..."
         },
         blog: {
-            title: "Travel Journal",
-            subtitle: "Stories, tips, and inspiration for your next adventure."
+            title: "Odyssey Chronicles",
+            subtitle: "Narratives, insights, and inspirations from the world's hidden corners."
         }
     },
     tours: [
         {
             id: "bali-bliss",
-            slug: "bali-bliss-retreat",
-            title: "Bali Bliss Retreat",
+            slug: "balinese-serenity-retreat",
+            title: "Balinese Serenity Retreat",
             price: "$1,200",
             duration: "5 Days",
-            description: "Experience the spiritual and natural beauty of Bali. From ancient temples to pristine beaches.",
+            description: "Immerse in Bali's spiritual tapestry. From ancient temples to pristine beaches in curated seclusion.",
             image: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?q=80&w=2076&auto=format&fit=crop",
-            highlights: ["Uluwatu Temple", "Ubud Monkey Forest", "Nusa Penida"]
+            highlights: ["Uluwatu Temple", "Ubud Sacred Forest", "Nusa Penida Secrets"]
         },
         {
             id: "swiss-alps",
-            slug: "swiss-alps-adventure",
-            title: "Swiss Alps Adventure",
+            slug: "alpine-symphony-expedition",
+            title: "Alpine Symphony Expedition",
             price: "$2,500",
             duration: "7 Days",
-            description: "Explore the majestic peaks of Switzerland. Skiing, hiking, and luxury chalets wait for you.",
+            description: "Conquer majestic Swiss peaks. Luxury chalets, private skiing, and alpine wonders await.",
             image: "https://images.unsplash.com/photo-1502759683299-cdcd6974244f?q=80&w=2070&auto=format&fit=crop",
-            highlights: ["Zermatt", "Matterhorn", "Lake Geneva"]
+            highlights: ["Zermatt Private Access", "Matterhorn Sunrise", "Lake Geneva Yachting"]
         },
         {
             id: "kyoto-culture",
-            slug: "kyoto-cultural-immersion",
-            title: "Kyoto Cultural Immersion",
+            slug: "kyoto-heritage-immersion",
+            title: "Kyoto Heritage Immersion",
             price: "$1,800",
             duration: "6 Days",
-            description: "Immerse yourself in the history and tradition of ancient Japan. Tea ceremonies and cherry blossoms.",
+            description: "Step into ancient Japan's soul. Private tea ceremonies, temple stays, and cultural mastery.",
             image: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?q=80&w=2070&auto=format&fit=crop",
-            highlights: ["Kinkaku-ji", "Fushimi Inari", "Arashiyama"]
+            highlights: ["Golden Pavilion Private Viewing", "Fushimi Inari Dawn Experience", "Arashiyama Bamboo Forest"]
         }
     ],
     posts: [
